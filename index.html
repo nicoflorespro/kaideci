@@ -3,9 +3,62 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/lux/bootstrap.min.css">
+	<title>Kaideci</title>
+	<style>
+		.dvh-100{
+			height: 100dvh;
+		}
+		main{
+			margin-inline: auto;
+			width: 33%;
+		}
+		@media only screen and (max-width : 1024px){
+			main{
+				width: 50%;
+			}
+		}
+		@media only screen and (max-width : 768px){
+			main{
+				width: 75%;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		function hesapla(){
+
+			var oran = 3;
+
+			var top = ($("#input1").val()*$("#input2").val())*oran;
+			$("#input3").val(top);
+
+		}
+	</script>
 </head>
-<body>
-	TEST
+<body class="bg-dark">
+	<main class="d-flex justify-content-center align-items-center flex-column dvh-100 gap-2 text-dark">
+		
+		<div class="form-group w-100">
+			<div class="input-group">
+			  <input type="number" class="form-control" placeholder="Default input" id="input1" value="0" min="0" onkeyup="hesapla()" onchange="hesapla()">
+			  <span class="input-group-text">cm</span>
+			</div>
+		</div>
+		<div class="form-group w-100">
+			<div class="input-group">
+			  <input type="number" class="form-control" placeholder="Default input" id="input2" value="0" min="0" onkeyup="hesapla()" onchange="hesapla()">
+			  <span class="input-group-text">cm</span>
+			</div>
+		</div>
+		<div class="form-group w-100">
+		    <div class="input-group">
+		      <input disabled value="0" type="text" id="input3" class="form-control">
+		      <span class="input-group-text">₺</span>
+		    </div>
+	  	</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
